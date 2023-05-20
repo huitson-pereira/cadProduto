@@ -14,7 +14,9 @@ const servidor = http.createServer((req, res) => {
     if (req.url == "/produtos") {
         switch (req.method) {
             case "GET":
-                
+                const produtos = listarProdutos();
+                res.writeHead(200, {"Context-Type": "application/json; charset: utf-8;"});
+                res.end(produtos);
                 break;
         
             case "POST":
