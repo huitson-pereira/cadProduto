@@ -31,6 +31,17 @@ const servidor = http.createServer((req, res) => {
                 break;
         
             case "POST":
+                let newProd = "";
+                req.on("data", (chunk)=>{
+                    newProd += chunk
+                })
+
+                req.on("end", ()=>{
+                    res.writeHead(200, {"Content-Type": "text/plain; charset:utf-8;"});
+                    res.write("Produto cadastrado com sucesso");
+                    res.end(cadastrarProduto(newProd));
+                })
+
                 break;
         }
     }else {
