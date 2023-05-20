@@ -1,0 +1,16 @@
+{
+    "produtos":[
+        {
+            "nome": "Caneta",
+            "peso": 0.02,
+            "quantidade": 10,
+            "codigo": 1
+        },
+        {
+            "nome": "Caderno",
+            "peso": 0.3,
+            "quantidade": 20,
+            "codigo": 2
+        }
+    ]
+}
