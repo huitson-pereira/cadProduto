@@ -10,6 +10,17 @@ function listarProdutos(){
     }
 }
 
+function cadastrarProduto(newProd){
+    try{
+        const dadosAtualizados = JSON.parse(fs.readFileSync("dados.json", utf-8))
+        dadosAtualizados.produtos.push(JSON.parse(newProd))
+        fs.writeFileSync("dados.json",JSON.stringify(dadosAtualizados))
+        return "Produto cadastrado com sucesso"
+    }catch{
+        return "Erro ao cadastrar Produto"
+    }
+}
+
 const servidor = http.createServer((req, res) => {
     if (req.url == "/produtos") {
         switch (req.method) {
